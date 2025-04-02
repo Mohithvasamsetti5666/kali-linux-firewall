@@ -15,7 +15,7 @@ This project demonstrates how to configure a secure Linux firewall using UFW (Un
 
 ## 🔧 Tools Used
 
-- Kali Linux (as root)
+- Kali Linux (You can use as root)
 - UFW (`Uncomplicated Firewall`)
 - Nmap (for before/after scanning)
 - VirtualBox (host system with shared folder)
