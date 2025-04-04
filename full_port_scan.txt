@@ -1,0 +1,7 @@
+# Nmap 7.95 scan initiated Fri Apr  4 12:17:38 2025 as: /usr/lib/nmap/nmap --privileged -p- -oN full_port_scan.txt 192.168.1.134
+Nmap scan report for 192.168.1.134
+Host is up (0.0000030s latency).
+All 65535 scanned ports on 192.168.1.134 are in ignored states.
+Not shown: 65535 closed tcp ports (reset)
+
+# Nmap done at Fri Apr  4 12:17:45 2025 -- 1 IP address (1 host up) scanned in 7.10 seconds

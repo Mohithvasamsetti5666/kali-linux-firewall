@@ -15,20 +15,34 @@ This project demonstrates how to configure a secure Linux firewall using UFW (Un
 
 ## 🔧 Tools Used
 
-- Kali Linux (You can use as root)
+- Kali Linux (as root)
 - UFW (`Uncomplicated Firewall`)
-- Nmap (for before/after scanning)
-- VirtualBox (host system with shared folder)
+- Nmap (for attack simulation)
+- scrot (for screenshots)
+- rsyslog (for logging firewall events)
+- VirtualBox (host with shared folder access)
 
 ---
 
-## 🛡️ UFW Rules Applied
+## 🔍 Firewall Effectiveness Testing (Red Team Simulation)
 
+After configuring UFW, I simulated real-world attack techniques to test the effectiveness of the firewall.
+
+### 🧪 Nmap Attack Simulations:
+
+| Type of Scan        | Command Used                                      |
+|---------------------|--------------------------------------------------|
+| Regular SYN Scan    | `nmap -sS 192.168.1.134 -oN regular_scan.txt`        |
+| Stealth Scan        | `nmap -sS -T4 -Pn -f 192.168.1.134 -oN stealth_scan.txt` |
+| Aggressive Scan     | `nmap -A 192.168.1.134 -oN aggressive_scan.txt`      |
+| Full Port Scan      | `nmap -p- 192.168.1.134 -oN full_port_scan.txt`      |
+
+Each scan was run **after enabling UFW** to observe which connections were blocked vs. allowed.
+
+---
+
+## 🗂 Log Capture & Analysis
+
+UFW logs were captured from `/var/log/syslog` using:
 ```bash
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-
-sudo ufw allow from 10.0.2.0/24 to any port 22 proto tcp    # SSH (local network only)
-sudo ufw allow 80/tcp    # HTTP
-sudo ufw allow 443/tcp   # HTTPS
-sudo ufw allow 2049/tcp  # Shared folder/NFS (VirtualBox)
+sudo grep 'UFW' /var/log/syslog > ufw_attack_log.txt

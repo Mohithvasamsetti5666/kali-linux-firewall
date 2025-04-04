@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Fri Apr  4 12:17:30 2025 as: /usr/lib/nmap/nmap --privileged -A -oN aggressive_scan.txt 192.168.1.134
+Nmap scan report for 192.168.1.134
+Host is up (0.000061s latency).
+All 1000 scanned ports on 192.168.1.134 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Apr  4 12:17:38 2025 -- 1 IP address (1 host up) scanned in 8.40 seconds
